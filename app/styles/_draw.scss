@@ -1,0 +1,128 @@
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+
+#draw-container{
+	background: white;
+	margin: 0px;
+	padding:0px;
+	// display:inline-block;
+	float:left;
+
+}
+
+#draw-input{
+	background: rgb(245,246,243);
+	height: 500px;
+	width:600px;
+	display:inline-block;
+	margin: 25px;
+	canvas:focus{
+		border-bottom:3px solid #7CEBD2;
+	}
+}
+
+h1{
+	font-family:"Montserrat";
+	letter-spacing:2px;
+	font-weight:600;
+	font-size:1.5em;
+	margin: 30px;
+}
+
+#text-input{
+	height: 500px;
+	width:300px;
+	display:inline-block;
+	margin: 25px;
+	vertical-align:top;
+	position:relative;
+	overflow:hidden;
+	textarea{
+		width:100%;
+		height:200px;
+		border: 2px solid rgb(245,246,243);
+		margin: 15px 0 15px 0;
+		font-family:"Merriweather", serif;
+		font-size:1em;
+		padding:10px;
+		font-weight:300;
+		line-height:1.5em;
+		@include box-sizing(border-box);
+
+		&:focus{
+			border: 2px solid black;
+
+		}
+	}
+}
+.submit{
+	width:100%;
+	// position:absolute;
+	// bottom:0px;
+	margin: 15px 0 15px 0;
+	button{
+		font-family:"Montserrat";
+		text-transform:uppercase;
+		letter-spacing:5px;
+		font-weight: 600;
+		font-size:0.8em;
+		padding: 10px 0 10px 0;
+		margin:0px;
+
+		cursor:pointer;
+		&:hover{
+			border: 3px solid black;
+
+		}
+	}
+
+	.anon{
+		width: 55%;
+		float:right;
+		background: #7CEBD2;
+		border: 3px solid #7CEBD2;
+		color:white;
+		&:hover{
+			background:black;
+		}
+	}
+
+	.twt{
+		width: 40%;
+		float:left;
+		background: white;
+		border: 3px solid #7CEBD2;
+		color: #7CEBD2;
+		&:hover{
+			color:black;
+		}
+
+	}
+}
+
+#control{
+
+	border-top:2px solid rgb(245,246,243);
+	border-bottom:2px solid rgb(245,246,243);
+	margin: 15px 0 15px 0;
+
+	div{
+		display:inline-block;
+		padding:10px;
+		// border:1px solid black;
+		cursor:pointer;
+		margin: 0px;
+		&:hover{
+			color: #7CEBD2;
+		}
+	}
+}
