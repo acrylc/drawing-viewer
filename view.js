@@ -1,1 +1,0 @@
-app.gmlRenderer.initRandom('draw-input', 3000,600,600);
