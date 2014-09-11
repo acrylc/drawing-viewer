@@ -1,0 +1,12 @@
+{
+  "name": "website",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "underscore": "~1.7.0",
+    "processing": "~1.4.8",
+    "x2js": "*",
+    "xml2json": "~1.1.1"
+  },
+  "devDependencies": {}
+}
