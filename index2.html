@@ -17,4 +17,36 @@
 
             </li></script><script type=text/template id=drawing-card-template><li class='card'>
 
-            </li></script><script src=scripts/c9161027.vendor.js></script><script src=scripts/9074bf6f.main.js></script>
+            </li></script><script src=scripts/c9161027.vendor.js></script><script src=scripts/93505a65.main.js></script><script type=text/javascript>var x2js = new X2JS(),
+    app = app || {},
+    lastId = '',
+    containerId = 'cards';
+
+'use strict';
+
+$.ajax({
+    url: 'http://54.68.129.229/api/entries',
+    dataType: "jsonp",    crossDomain:true, 
+    success : function (data, textStatus, jqXHR) { 
+        lastId = data.lastId
+        data.entries.forEach(function(entry){
+            app.renderer.render(entry);
+        })
+    }
+});
+
+$(window).scroll(function() {
+    'use strict';
+    if($(window).scrollTop() + $(window).height()=== $(document).height()) {
+        $.ajax({
+            url: 'http://54.68.129.229/api/entries/'+lastId,
+            dataType: "jsonp",    crossDomain:true, 
+            success : function (data, textStatus, jqXHR) { 
+                lastId = data.lastId
+                data.entries.forEach(function(entry){
+                    app.renderer.render(entry);
+                })
+            }
+        });
+    }
+});</script>
